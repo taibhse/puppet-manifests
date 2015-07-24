@@ -1,14 +1,5 @@
 #script for server setup
 
-#create test user
-user { 'user_one':
-    ensure => present,
-    name => 'user_one',
-    home => '/home/user_one',
-    shell => '/bin/bash',
-    comment => 'testing puppet',
-}
-
 #Create User for Chris
 user { 'chris':
     ensure => present,
@@ -16,6 +7,7 @@ user { 'chris':
     home => '/home/chris',
     shell => '/bin/bash',
     comment => 'Taibhse',
+    managehome => true,
 }
 
 #Create a user for tim
@@ -25,4 +17,5 @@ user { 'tim':
     home => '/home/tim',
     shell => '/bin/bash',
     comment => 'NEEERRRRDDD',
+    managehome => true,
 }
